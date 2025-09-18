@@ -1,0 +1,180 @@
+/* --- Global Resets & Font Imports --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Main Body & Background Styling --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #101727;
+    color: #E0E0E0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden; /* Prevents scrollbars from the glow effect */
+}
+
+/* Animated background gradient circle */
+.background-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(29, 43, 72, 0.8) 0%, rgba(16, 23, 39, 0) 70%);
+    transform: translate(-50%, -50%);
+    animation: pulse 15s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+}
+
+/* --- Main Content Container --- */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(29, 43, 72, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    z-index: 1; /* Sits on top of the background */
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Header Section --- */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.header .description {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #a0aec0; /* Lighter text color */
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- Form & Input Elements --- */
+.input-form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(16, 23, 39, 0.7);
+    color: #E0E0E0;
+    resize: vertical;
+    min-height: 150px;
+    transition: all 0.3s ease;
+}
+
+.input-form textarea::placeholder {
+    color: #718096;
+}
+
+.input-form textarea:focus {
+    outline: none;
+    border-color: #00f5c9;
+    box-shadow: 0 0 15px rgba(0, 245, 201, 0.2);
+}
+
+.button-wrapper {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.btn-submit {
+    background: #00f5c9;
+    color: #101727;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 245, 201, 0.2);
+}
+
+/* --- Results Section --- */
+.results-wrapper {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between result items */
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.result-item {
+    background: rgba(16, 23, 39, 0.7);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-item h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #a0aec0;
+    margin-bottom: 0.75rem;
+}
+
+.result-tag {
+    display: inline-block;
+    background-color: rgba(0, 245, 201, 0.1);
+    color: #00f5c9;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.result-summary {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #E0E0E0;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+    body { padding: 1rem; }
+    .container { padding: 2rem; }
+    .header h1 { font-size: 1.8rem; }
+    .header .description { font-size: 1rem; }
+}
