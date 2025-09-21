@@ -140,6 +140,10 @@ Go to `http://localhost:3000` to use the app locally.
 
 ---
 
-## 👨‍💻 Author  
+## 👨‍💻 Authors
+
+**Isha Das**  
+📧 [isha@idtechsolutionsbd.com]  
+
 **Md Jisan Ahmed**  
-🚀 Live Project: [BanglaNews Web App](https://banglanews.luminatechbd.site/)  
+📧 [jisan3325@gmail.com]  
